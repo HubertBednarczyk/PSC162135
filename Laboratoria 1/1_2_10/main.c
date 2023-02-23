@@ -4,6 +4,7 @@
 int main()
 {
     float x;
-    scanf()
+    scanf("%f",&x);
+    printf("%f %f", x,fabs(x));
     return 0;
 }
