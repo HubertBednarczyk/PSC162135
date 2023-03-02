@@ -3,9 +3,8 @@
 
 int main()
 {
-    float a,b,c;
-    scanf("%f \n %f \n %f", &a,&b,&c);
-    float srednia = (a+b+c)/3;
-    printf("Srednia: %f", srednia);
+    int a,b,c;
+    scanf("%d \n %d \n %d", &a,&b,&c);
+    printf("Srednia: %f\n", (a+b+c)/3.0);
     return 0;
 }
