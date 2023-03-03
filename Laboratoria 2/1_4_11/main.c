@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//DO PONOWNEGO ZAJRZENIA
+
 int main()
 {
     int a,b,c,d;
@@ -20,6 +20,5 @@ int main()
         k++;
     }
     printf("%d\n",k);
-
     return 0;
 }

@@ -1,35 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Nie do konca tak chcialbym zeby to wygladalo
+
 int main()
 {
-    int a;
+    char a;
     printf("Oto program kalkulator\n");
     printf("Wybierz jaka operacje chcesz wykonac\n");
-    printf("Dodawanie-[1], Odejmowanie-[2],Mnozenie-[3],Dzielenie-[4]\n");
-    scanf("%d",&a);
-    int b,c;
+    printf("Dodawanie[+], Odejmowanie[-],Mnozenie[*],Dzielenie[/]\n");
+    scanf("%c",&a);
+    double b,c,wynik;
     switch(a){
-        case 1:
+        case '+':
             printf("Wybrales dodawanie.\n");
             printf("Podaj dwie liczby ktore chcesz dodac\n");
-            scanf("%d %d",&b,&c);
-            printf("Wynik: %d",b+c);
-        case 2:
+            scanf("%lf %lf",&b,&c);
+            wynik = b+c;
+            printf("Wynik: %lf",wynik);
+            break;
+        case '-':
             printf("Wybrales odejmowanie.\n");
             printf("Podaj dwie liczby ktore chcesz odjac\n");
-            scanf("%d %d",&b,&c);
-            printf("Wynik: %d",b-c);
-        case 3:
+            scanf("%lf %lf",&b,&c);
+            wynik = b-c;
+            printf("Wynik: %lf",wynik);
+            break;
+        case '*':
             printf("Wybrales mnozenie.\n");
             printf("Podaj dwie liczby ktore chcesz pomnozyc\n");
-            scanf("%d %d",&b,&c);
-            printf("Wynik: %d",b*c);
-        case 4:
+            scanf("%lf %lf",&b,&c);
+            wynik = b*c;
+            printf("Wynik: %lf",wynik);
+            break;
+        case '/':
             printf("Wybrales dzielenie.\n");
             printf("Podaj dwie liczby ktore chcesz podzielic\n");
-            scanf("%d %d",&b,&c);
-            printf("Wynik: %d",b/c);
+            scanf("%lf %lf",&b,&c);
+            if(c==0 || b==0){
+                printf("Pamietaj cholero, nie dziel przez zero.\n");
+                return 1;
+            }
+            wynik = b/c;
+            printf("Wynik: %lf",wynik);
+            break;
+        default:
+            printf("Niepoprawny znak\n");
+            return 1;
     }
     return 0;
 }
