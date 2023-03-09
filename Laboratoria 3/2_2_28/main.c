@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//cos nie tak
+
 int reku(int n,int m){
     if(m==0){
         return n;
@@ -13,10 +13,13 @@ int reku(int n,int m){
     }
 }
 
-int main()
-{
-    int a,b;
-    scanf("%d %d",&a,&b);
-    printf("The value of f(%d, %d) is %d\n", a, b, reku(a, b));
+int main(){
+    printf("%d\n",reku(0,0));
+    printf("%d\n",reku(5,0));
+    printf("%d\n",reku(0,5));
+    printf("%d\n",reku(2,2));
+    printf("%d\n",reku(3,3));
+    printf("%d\n",reku(7,4));
+    printf("%d\n",reku(12,8));
     return 0;
 }
