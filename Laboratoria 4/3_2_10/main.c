@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *foo(){
+double *foo(){
     double *p = (double *)malloc(sizeof(double));
     return p;
 }

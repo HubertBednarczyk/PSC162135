@@ -1,0 +1,54 @@
+---
+title: "Programowanie strukturalne - Przykładowe Kolokwium 1 - Zestaw 101"
+lang: pl
+editor: visual
+format: pdf
+---
+
+Rozwiązania mają być umieszczone zgodnie ze specyfikacją.
+
+1. W folderze Debug101 znajduje się projekt z kodem w języku C.
+W pliku main.c w niektórych linijkach są komentarze. 
+Twoim zadaniem jest wpisanie wartości odpowiednich zmiennych po wykonaniu konkretnej linii kodu. Dopisanie nowych linijek czy zaburzenie struktury kodu oznacza zero punktów za polecenie.
+
+*Punktacja: 5 pkt.*
+
+2. Napisz funkcję, której parametrami są trzy dodatnie liczby całkowite $n$, $m$ i $k$. Funkcja ma zwrócić 2 jeśli $m$ jest podzielne jednocześnie przez $n$ i $k$, 1 jeśli jest podzielne tylko przez jedną z liczb $n$ lub $k$ oraz zwraca 0 w przeciwnym wypadku. Stwórz przypadek testowy dla funkcji
+ 
+*Punktacja: 7 pkt.*
+
+3. Napisz funkcję, która otrzymuje trzy argumenty:
+
+* dwa wskaźniki na funkcje o jednym argumencie typu `int` zwracające wartość typu `int`,
+* wartość `n` typu `int`.
+
+Funkcja ma zwrócić 2 jeśli wartość pierwszej funkcji jest kwadratem wartości drugiej funkcji odpowiednio na liczbach od 1 do $n$ (np. $f_1(1)=(f_2(1))^2, f_1(2)=(f_2(2))^2$, itd.) oraz ma zwracać -2 w przeciwnym wypadku. Stwórz dwa przypadki testowe dla funkcji, aby funkcja zwróciła obie możliwe wartości.
+
+
+*Punktacja: 8 pkt.*
+
+4. Napisz funkcję rekurencyjną, która dla otrzymanej w argumencie nieujemnej liczby całkowitej $n$ zwraca
+wartość elementu o indeksie $n$ ciągu zdefiniowanego w następujący sposób
+
+$$a_0=1, a_1=2$$
+
+$$a_n=\begin{cases}a_{n-2}+1, n-\mathrm{parzyste}\\a_{n-2}\cdot 3, n-\mathrm{nieparzyste} \end{cases}$$
+
+
+Stwórz dwa przypadki testowe dla funkcji.
+
+
+
+
+*Punktacja: 10 pkt.*
+
+5. Napisz funkcję, która otrzymuje trzy argumenty: dodatnią liczbę całkowitą $n$ oraz dwie $n$-elementowe tablice `tab1` i `tab2` o elementach typu `int`. Funkcja ma wypisać w kolejnych wierszach unikalne wartości dodatnie z tablicy. Stwórz przypadek testowy.
+
+Przykład: dla tablicy zawierającej elementy 4,-5,3,-7,3,4,-7 ma być wyświetlone:
+
+```
+4
+3
+```
+
+*Punktacja: 10 pkt - gdy rozwiązanie w całości oparte na wskaźnikach. 5 pkt - gdy rozwiązanie bazuje na notacji tablicowej (przez nawiasy kwadratowe). W przypadku rozwiązania mieszanego, maksymalna liczba punktów może być zmienna.*

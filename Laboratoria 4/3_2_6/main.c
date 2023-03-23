@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int foo(int n, int*w){
+void foo(int n, int*w){
     *w = n;
 }
 

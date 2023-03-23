@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int foo(int n){
+int* foo(int n){
     int *p = (int *)malloc(n * sizeof(int));
     return p;
 }
