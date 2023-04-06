@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 double srednia(int n, int tab[n]){
-    int srednia = 0;
-    int suma = 0;
+    double srednia = 0;
     if(n>0){
         for(int i =0;i<n;i++){
             srednia += tab[i];

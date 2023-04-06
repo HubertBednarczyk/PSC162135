@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 double foo(int n, const int tab[n]){
-    int srednia = 0;
+    double srednia = 0;
     for(int i =0;i<n;i++){
         srednia+=tab[i];
     }

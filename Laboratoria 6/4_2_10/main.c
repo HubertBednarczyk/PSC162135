@@ -1,16 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 //a)
-/*int max_wartosc(int n, int* tab){
-    int max = tab[0];
-    for(int i =0;i<n;i++){
-        if(tab[i] > max){
-            max=tab[i];
-        }
-    }
-    return max;
-}*/
-
 int max(int n, int *tab){
     int temp = *tab;
     for(int i=1;i<n;i++){
@@ -20,6 +10,7 @@ int max(int n, int *tab){
     }
     return temp;
 }
+
 //b)
 int min(int n, int *tab){
     int temp = *tab;
@@ -30,16 +21,8 @@ int min(int n, int *tab){
     }
     return temp;
 }
-//c)
-/*int index(int n, int *tab){
-    for(int i =0;i<n;i++){
-        if(tab[i]==n){
-            return i;
-        }
-    }
-    return -1;
-}*/
 
+//c)
 int index2(int n, int *tab){
     for(int i =0;i<n;i++){
         if(*(tab+i)==n){
@@ -48,6 +31,7 @@ int index2(int n, int *tab){
     }
     return -1;
 }
+
 //d)
 int indexmin(int n, int *tab){
     int min = tab[0];
@@ -60,17 +44,8 @@ int indexmin(int n, int *tab){
     }
     return min_index;
 }
-//e)
-/*int abs_max(int n, int *tab){
-    int max = abs(tab[0]);
-    for(int i =0;i<n;i++){
-        if(abs(tab[i]) > max){
-            max=abs(tab[i]);
-        }
-    }
-    return max;
-}*/
 
+//e)
 int abs_maxwartosc(int n, int *tab){
     int max = abs(tab[0]);
     for(int i =0;i<n;i++){
@@ -82,19 +57,6 @@ int abs_maxwartosc(int n, int *tab){
 }
 
 //f)
-
-/*int abs_indexabs(int n, int *tab){
-    int max = abs(tab[0]);
-    int max_index = 0;
-    for(int i =1;i<n;i++){
-        if(abs(tab[i]) > max){
-            max = abs(tab[i]);
-            max_index = i;
-        }
-    }
-    return max_index;
-}*/
-
 int abs_indexabs(int n, int *tab){
     int max = abs(tab[0]);
     int max_index = 0;
