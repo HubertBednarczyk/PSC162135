@@ -13,7 +13,7 @@ int main()
     double *tab = (double*)malloc(n*sizeof(double));
 
     for(int i=0;i<n;i++){
-        tab[i] = i*1,5;
+        tab[i] = i*1.5;
         printf("%.2lf",tab[i]);
     }
 
