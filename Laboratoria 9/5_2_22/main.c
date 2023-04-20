@@ -37,13 +37,13 @@ int main()
     char napis2[] = "kota ";
     char napis3[] = "i psa.";
     char* wynik = sklej(napis1, napis2, napis3);
-    printf("%s", wynik);
+    printf("%s\n", wynik);
     free(wynik);
 
     wchar_t napis11[] = L"Ala ma ";
     wchar_t napis22[] = L"kota ";
-    wchar_t napis33[] = L"i psa.";
-    wchar_t* wwynik = sklej(napis11, napis22, napis33);
+    wchar_t napis33[] = L"i psa";
+    wchar_t* wwynik = sklej2(napis11, napis22, napis33);
     wprintf(L"%ls", wwynik);
     free(wwynik);
     return 0;
