@@ -1,32 +1,55 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void zmien_kolejnosc_wierszy(int **tab, int n, int m) {
-    int *temp = malloc(m * sizeof(int));  // tymczasowa tablica na przechowywanie wiersza
+void zmien_kolejnosc_wierszy(int** tab, int n, int m)
+{
+    int i, j, temp;
 
-    // przechodzimy po wierszach od pierwszego do przedostatniego
-    for (int i = 0; i < n - 1; i++) {
-        // zapisujemy wiersz i+1 do tablicy tymczasowej
-        for (int j = 0; j < m; j++) {
-            temp[j] = tab[i+1][j];
-        }
-
-        // przepisujemy wiersz i do wiersza i+1
-        for (int j = 0; j < m; j++) {
-            tab[i+1][j] = tab[i][j];
-        }
-
-        // przepisujemy wiersz tymczasowy do wiersza i
-        for (int j = 0; j < m; j++) {
-            tab[i][j] = temp[j];
+    // Przestawienie wierszy
+    for (i = 0; i < n/2; i++) {
+        for (j = 0; j < m; j++) {
+            temp = tab[i][j];
+            tab[i][j] = tab[n-i-1][j];
+            tab[n-i-1][j] = temp;
         }
     }
-
-    free(temp);  // zwalniamy pamiêæ zaalokowan¹ na tablicê tymczasow¹
 }
 
-int main()
-{
-    printf("Hello world!\n");
+int main() {
+    int n = 3;
+    int m = 4;
+    int** tablica = malloc(n * sizeof(int*));
+    for (int i = 0; i < n; i++) {
+        tablica[i] = malloc(m * sizeof(int));
+    }
+
+    // Wypisanie zawartoÅ›ci tablicy przed przestawieniem wierszy
+    printf("Tablica przed przestawieniem wierszy:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            tablica[i][j] = i * m + j + 1;
+            printf("%d ", tablica[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Przestawienie wierszy
+    zmien_kolejnosc_wierszy(tablica, n, m);
+
+    // Wypisanie zawartoÅ›ci tablicy po przestawieniu wierszy
+    printf("Tablica po przestawieniu wierszy:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("%d ", tablica[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Zwolnienie pamiÄ™ci
+    for (int i = 0; i < n; i++) {
+        free(tablica[i]);
+    }
+    free(tablica);
+
     return 0;
 }
