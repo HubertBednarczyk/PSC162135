@@ -6,17 +6,21 @@
 
 
 void kopiujn(char* nap1, char* nap2, int n) {
-    int len = strlen(nap1);
-    if (len < n) n = len;
-    strncpy(nap2, nap1, n);
-    nap2[n] = '\0';
+    int i = 0;
+    while (i < n && nap1[i] != '\0') {
+        nap2[i] = nap1[i];
+        i++;
+    }
+    nap2[i] = '\0';
 }
 
 void kopiujn2(wchar_t* nap1, wchar_t* nap2, int n) {
-    int len = wcslen(nap1);
-    if (len < n) n = len;
-    wcsncpy(nap2, nap1, n);
-    nap2[n] = L'\0';
+    int i = 0;
+    while (i < n && nap1[i] != L'\0') {
+        nap2[i] = nap1[i];
+        i++;
+    }
+    nap2[i] = L'\0';
 }
 
 int main() {
@@ -29,7 +33,7 @@ int main() {
 
     wchar_t wnap1[] = L"Witaj, świecie!";
     wchar_t wnap2[20];
-    kopiujn(wnap1, wnap2, 7);
+    kopiujn2(wnap1, wnap2, 7);
     wprintf(L"wnap1: %ls\n", wnap1); // wyświetla "Witaj, świecie!"
     wprintf(L"wnap2: %ls\n", wnap2);
     return 0;

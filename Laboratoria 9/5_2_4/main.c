@@ -2,8 +2,11 @@
 #include <stdlib.h>
 
 int foo(const char *napis1, const char *napis2){
-    int wynik = strcmp(napis1,napis2);
-    if(wynik < 0){
+    while (*napis1 != '\0' && *napis2 != '\0' && *napis1 == *napis2){
+        napis1++;
+        napis2++;
+    }
+    if(*napis1 < *napis2){
         return 1;
     }
     return 0;

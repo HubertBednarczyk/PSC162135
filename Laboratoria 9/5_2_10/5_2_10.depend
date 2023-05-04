@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1681995529 source:c:\studia\czwarty semestr\programowanie strukturalne\psc162135\laboratoria 9\5_2_10\main.c
+1683203417 source:c:\studia\czwarty semestr\programowanie strukturalne\psc162135\laboratoria 9\5_2_10\main.c
 	<stdio.h>
-	<stdlib.h>
-	<string.h>
 	<wchar.h>
 	<locale.h>
+	<stdlib.h>
+	<string.h>
 
