@@ -4,14 +4,37 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+
 char* wytnij2(char nap1[], char nap2[]) {
     char* wynik = NULL;
-    int nap1_len = strlen(nap1);
-    int nap2_len = strlen(nap2);
+    int nap1_len = 0;
+    int nap2_len = 0;
+
+    while (nap1[nap1_len] != '\0') {
+        nap1_len++;
+    }
+
+    while (nap2[nap2_len] != '\0') {
+        nap2_len++;
+    }
+
     for (int i = 0; i <= nap1_len - nap2_len; i++) {
-        if (strncmp(nap1 + i, nap2, nap2_len) == 0) {
+        int j;
+        for (j = 0; j < nap2_len; j++) {
+            if (nap1[i + j] != nap2[j]) {
+                break;
+            }
+        }
+        if (j == nap2_len) {
             wynik = nap1 + i;
-            memmove(wynik, wynik + nap2_len, strlen(wynik + nap2_len) + 1);
+            int k = i + nap2_len;
+            while (nap1[k] != '\0') {
+                nap1[k] = nap1[k + nap2_len];
+                k++;
+            }
+            nap1[k] = '\0';
             break;
         }
     }
@@ -20,12 +43,32 @@ char* wytnij2(char nap1[], char nap2[]) {
 
 wchar_t* wytnij22(wchar_t nap1[], wchar_t nap2[]) {
     wchar_t* wynik = NULL;
-    int nap1_len = wcslen(nap1);
-    int nap2_len = wcslen(nap2);
+    int nap1_len = 0;
+    int nap2_len = 0;
+
+    while (nap1[nap1_len] != L'\0') {
+        nap1_len++;
+    }
+
+    while (nap2[nap2_len] != L'\0') {
+        nap2_len++;
+    }
+
     for (int i = 0; i <= nap1_len - nap2_len; i++) {
-        if (wcsncmp(nap1 + i, nap2, nap2_len) == 0) {
+        int j;
+        for (j = 0; j < nap2_len; j++) {
+            if (nap1[i + j] != nap2[j]) {
+                break;
+            }
+        }
+        if (j == nap2_len) {
             wynik = nap1 + i;
-            wmemmove(wynik, wynik + nap2_len, wcslen(wynik + nap2_len) + 1);
+            int k = i + nap2_len;
+            while (nap1[k] != L'\0') {
+                nap1[k] = nap1[k + nap2_len];
+                k++;
+            }
+            nap1[k] = L'\0';
             break;
         }
     }
@@ -33,25 +76,11 @@ wchar_t* wytnij22(wchar_t nap1[], wchar_t nap2[]) {
 }
 
 int main() {
-    setlocale(LC_ALL, "");
-
-    char nap1[] = "To jest napis testowy";
-    char nap2[] = "napis";
-    char* wynik = wytnij2(nap1, nap2);
-    if (wynik != NULL) {
-        printf("Wynik: %s\n", wynik);
-        //free(wynik);
-    }
-    else {
-        printf("Nie znaleziono szukanego napisu.\n");
-    }
-
     wchar_t wnap1[] = L"To jest napis testowy";
     wchar_t wnap2[] = L"napis";
     wchar_t* wwynik = wytnij22(wnap1, wnap2);
     if (wwynik != NULL) {
         wprintf(L"Wynik: %ls\n", wwynik);
-        //free(wwynik);
     }
     else {
         wprintf(L"Nie znaleziono szukanego napisu.\n");
