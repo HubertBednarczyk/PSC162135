@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1683807584 source:c:\studia\czwarty semestr\programowanie strukturalne\psc162135\laboratoria 11\zadaniec\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
